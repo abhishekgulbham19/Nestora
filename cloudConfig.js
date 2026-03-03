@@ -9,7 +9,7 @@ cloudinary.v2.config({
 
 const storage = cloudinaryStorage({
   cloudinary,
-  folder: "voyagr_DEV",
+  folder: "Nestora_DEV",
   allowedFormats: ["jpeg", "png", "jpg"],
 });
 
