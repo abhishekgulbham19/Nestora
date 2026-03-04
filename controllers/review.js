@@ -22,6 +22,15 @@ module.exports.createReview = async( req, res)=>{
 module.exports.destroyReview = async(req, res) =>{
     let{id, reviewId} = req.params;
 
+    const deletedReview = await Review.findOneAndDelete({
+        _id: reviewId,
+        author: req.user._id,
+    });
+    if(!deletedReview){
+        req.flash("error", "You are not allowed to delete this review");
+        return res.redirect(`/listings/${id}`);
+    }
+
     await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
     req.flash("success" , " Review Deleted");
     return res.redirect(`/listings/${id}`);

@@ -114,19 +114,191 @@ body{
 /* /Show Page */
 .show-img{
     height: 30vh;
+    object-fit: cover;
 }
 .show-card{
-    padding: left 0; 
+    padding-left: 0; 
     padding-right: 0;
 }
 
 .btns{
-
     display:flex;
+    gap: 0.75rem;
+    align-items: center;
 }
 
 /* Map */
 #map{
     height:400px;
-    width:80vh;
+    width:100%;
+    max-width: 1000px;
+}
+
+/* Responsive Design */
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }
+
+    .navbar {
+        height: auto;
+        min-height: 5rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .navbar .navbar-collapse {
+        padding-top: 0.5rem;
+    }
+
+    .navbar .navbar-nav {
+        gap: 0.35rem;
+    }
+
+    .navbar form.d-flex {
+        width: 100%;
+        margin-top: 0.35rem;
+    }
+
+    .navbar .search-input {
+        width: 100%;
+        min-width: 0;
+        padding: 0.45rem 0.9rem !important;
+    }
+
+    .navbar .search-btn {
+        padding: 0.45rem 0.9rem !important;
+        white-space: nowrap;
+    }
+
+    #filters {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        padding-bottom: 0.35rem;
+        gap: 0.35rem;
+        scrollbar-width: thin;
+    }
+
+    .filter {
+        flex: 0 0 auto;
+        margin-right: 0.9rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .tax-toggle {
+        flex: 0 0 auto;
+        margin-left: 0 !important;
+        margin-top: 1rem;
+        height: auto !important;
+        padding: 0.65rem 0.9rem !important;
+    }
+
+    .tax-toggle .form-check-label {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .listing-card .card-img-top {
+        height: 15rem !important;
+    }
+
+    .row > .col-8.offset-3,
+    .row > .col-6.offset-3,
+    .row.mt-3 > .col-8.offset-2,
+    .row.mt-3 > .col-6.offset-2,
+    .row.mt-3 > h3.col-6.offset-2 {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    .show-img {
+        height: 14rem;
+    }
+
+    .btns {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btns .edit-btn,
+    .btns form,
+    .btns form button {
+        width: 100%;
+    }
+
+    .btns .edit-btn,
+    .btns .offset-5 {
+        margin-left: 0 !important;
+    }
+
+    .row .card.col-5.ms-3 {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    #map {
+        height: 280px;
+    }
+
+    .f-info {
+        height: auto;
+        padding: 0.9rem 0.4rem;
+        gap: 0.45rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .navbar {
+        height: auto;
+        min-height: 5rem;
+    }
+
+    .navbar .navbar-collapse {
+        padding-top: 0.5rem;
+    }
+
+    .navbar form.d-flex {
+        width: 100%;
+        max-width: 460px;
+    }
+
+    .navbar .search-input {
+        min-width: 0;
+        padding: 0.5rem 1.1rem !important;
+    }
+
+    .listing-card .card-img-top {
+        height: 18rem !important;
+    }
+
+    .row > .col-8.offset-3,
+    .row > .col-6.offset-3 {
+        width: 90%;
+        margin-left: 5% !important;
+    }
+
+    .btns .edit-btn,
+    .btns .offset-5 {
+        margin-left: 0 !important;
+    }
+
+    .tax-toggle {
+        margin-left: 0 !important;
+        margin-top: 1rem;
+    }
+
+    #map {
+        height: 340px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar form.d-flex {
+        max-width: 480px;
+    }
+
+    #map {
+        height: 400px;
+    }
 }
